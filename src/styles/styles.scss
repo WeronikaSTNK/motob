@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+#header {
+  padding: 10px;
+  background-color: var(--main-dark-color);
+}
+
+#contactSection p {
+  text-align: center;
+  margin: 40px 0px;
+}
+.motobLogo {
+  height: 5vh;
+  width: 10vw;
+}
+.right {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  width: 23vw;
+  margin-left: 60vw;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.titleWrapper {
+  letter-spacing: var(--mainSpacing);
+  position: relative;
+  img {
+    width: 18em;
+    height: auto;
+      animation: pop-up 3s forwards;
+
+  }
+}
+
+.titleWrapper span {
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 2;
+  animation: pop-up 3s forwards;
+}
+
+.details {
+  color: var(--main-light-color);
+  animation: pop-up 12s forwards;
+  font-size: 2.8vw;
+  padding: 1em;
+}
+
+.titleSection,
+#aboutSection,
+#contactSection,
+#offersSection {
+  min-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: var(--background-light-color);
+  color: var(--main-dark-color);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em 4em 0 4em;
+}
+#contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.description {
+  text-indent: 1.5em;
+}
+
+.centerText {
+  text-align: center;
+  letter-spacing: 1px;
+}
+#scrollDownButton a {
+  padding-top: 60px;
+  animation: pop-up 3s forwards;
+}
+#scrollDownButton a span {
+  position: absolute;
+  width: 56px;
+  height: 40px;
+  margin-left: -23px;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+#scrollDownButton a span::after {
+  position: absolute;
+  top: 100%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 3px solid var(--main-red-color);
+  border-bottom: 3px solid var(--main-red-color);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+#scrollDownButton:hover {
+  opacity: 0.6;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 1em;
+  hr {
+    border-top: none !important;
+    border-bottom: 2px solid var(--main-red-color) !important;
+    margin: 15px 8% !important;
+    margin-bottom: 45px !important;
+    width: 100%;
+  }
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sectionTitle hr {
+  border: none;
+  margin: 3px;
+  height: 2px;
+  background: -webkit-linear-gradient(
+    left,
+    transparent 0%,
+    gray 50%,
+    transparent 100%
+  );
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--main-dark-color) 50%,
+    transparent 100%
+  );
+}
+
+.mediaIcon {
+  color: rgb(64, 128, 255);
+  cursor: pointer;
+  margin: 5px;
+}
+.headerIcons {
+  color: var(--main-light-color);
+  margin: 5px;
+  font-size: 1em;
+}
+.footerIcons {
+  color: var(--main-dark-color);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  p {
+    padding: 0;
+  }
+}
+
+.wrapper {
+  height: auto;
+  width: 80vw;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+}
+.rowWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 80px;
+}
+.footer {
+  color: var(--gray-color);
+  background-color: var(--main-dark-color);
+  font-size: 1em;
+  padding: 20px;
+  margin-top: 50px;
+  border-top: 2px solid red;
+  text-align: center;
+}
+.iconsWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  align-content: center;
+}
+a {
+  text-decoration: none;
+  color: var(--main-dark-color);
+  font-size: 1.2em;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1em;
+}
+#motorcycles,
+#accessorizes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.imgContainer img {
+  height: auto;
+  width: 30vw;
+  display: block;
+  transition: var(--mainTransition);
+  margin-top: 4em;
+}
+.priceTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--main-dark-color);
+  color: var(--main-light-color);
+  padding: 0.3rem 0.6rem 0.5rem;
+  border-bottom-right-radius: 1rem;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+.priceTop p {
+  margin-bottom: 0;
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: var(--mainSpacing);
+}
+
+.motorcyclesName {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: var(--mainSpacing);
+}
+.descWrapper {
+  font-size: 0.8em;
+  // text-align: justify;
+  height: auto;
+}
+ul {
+  display: block;
+  list-style: none;
+  line-height: 1.7em;
+  letter-spacing: 0.1em;
+}
+li {
+  font-weight: 600;
+  padding: 1px;
+}
+b {
+  font-weight: 100;
+}
+
+// #accessorizes .descriptionMoto {
+//   line-height: 1.7em;
+//   letter-spacing: 0.1em;
+// }
+
+#rentalInfo {
+  li {
+    font-weight: 500;
+    padding: 0;
+  }
+}
+@keyframes pop-up {
+  0% {
+    transform: scale(0) translateY(-10px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.2) translateY(-2px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 2;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #aboutSection,
+  #contactSection,
+  #offersSection {
+    padding: 20px;
+  }
+  .mediaIcon {
+    font-size: 10px;
+  }
+
+  .iconsContainer {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  iframe {
+    height: 80vh;
+    width: 100vw;
+  }
+  #contactSection {
+    span,
+    a {
+      padding: 0px;
+      font-size: 0.8em;
+      line-height: 1.5em;
+    }
+    .footerIcons {
+      padding: 3px;
+      .mediaIcon {
+        font-size: 30px;
+        margin: 10px;
+      }
+    }
+  }
+  .imgContainer img {
+    width: 50vw;
+    height: auto;
+  }
+  #motorcycles,
+  #accessorizes {
+    display: flex;
+    flex-direction: column;
+  }
+  .motorcyclesName {
+    font-size: 1.5em;
+  }
+}
+
+.moreInfoBtn {
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  border: 2px solid var(--main-dark-color);
+  background-color: var(--main-dark-color);
+  color: var(--main-light-color);
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: var(--mainSpacing);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+.moreInfoBtn:hover {
+  cursor: pointer;
+  background-color: var(--main-red-color);
+  border: 2px solid var(--main-red-color);
+}
+@media screen and (max-width: 480px) {
+  #scrollDownButton a span {
+    position: absolute;
+    width: 49px;
+    height: 26px;
+    margin-left: -23px;
+    border-radius: 100%;
+    box-sizing: border-box;
+  }
+  main {
+    height: 55vh;
+  }
+  #scrollDownButton {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .rowWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React    from "react";
+import Header from "./layout/Header";
+import About from "./components/About";
+import Homepage from "./layout/Homepage";
+import Footer from "./layout/Footer";
+import Nav from "./layout/Nav";
+import logo from'./images/logoNapis.png'
+import Offer from "./layout/Offer";
+import Contact from "./layout/Contact";
+import SliderCSS from "./layout/SliderCSS";
+import { Router, Route, Link } from 'react-router-dom';
 
-function App() {
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Router> */}
+      <Header logo={logo} />
+        <Nav logo={logo} />
+        <main>
+          <Homepage />
+          <About />
+          <Offer />
+          <Contact />
+          <SliderCSS />
+          <Footer />
+        </main>
+    {/* </Router> */}
+
+    </>
   );
-}
+};
 
 export default App;

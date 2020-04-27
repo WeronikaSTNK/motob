@@ -1,13 +1,112 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Montserrat&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;500&display=swap");
+*,
+*:root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  --main-light-color: rgb(202, 202, 202);
+  --main-red-color: rgba(224, 9, 9, 0.89);
+  --main-dark-color: rgb(20, 20, 20);
+  --gray-color: rgb(143, 143, 143);
+  --background-light-color: rgb(232, 232, 232);
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 2px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Roboto", "Lato", sans-serif;
+  background-color: var(--background-light-color);
+}
+
+main {
+  background-size: cover !important;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  background-image: url("./images/back2.jpg");
+    background-position: center;
+}
+h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 25px;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 2em;
+}
+
+
+h3 {
+  position: relative;
+  text-align: center;
+  padding: 2em;
+  font-size: 1.3em;
+}
+h4 {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: var(--mainSpacing);
+  margin-top: 0.7em
+}
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1.5em;
+}
+h6 {
+  font-size: 1em;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+p, span {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.1em;
+    padding: 20px 0px;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: 0px 10px;
+  }
+
+  h2 {
+    font-size: 1em;
+    padding: 0px 10px;
+  }
+}
+@media (min-width: 1024px) {
+  h2 {
+    text-align: center;
+  }
+  p {
+    line-height: 1.3em;
+  }
+  #aboutSection {
+    padding: 20px 110px;
+  }
 }
