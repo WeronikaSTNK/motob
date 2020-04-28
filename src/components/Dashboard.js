@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
 export const Dashboard = (props) => {
-   const handleLogout = () => {
-    props.history.push('/login');
-  }
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
   return (
     <div>
       uszanowanko zalogowanko
-            <input type="button" onClick={handleLogout} value="Logout" />
-
+      <input type="button" onClick={handleLogout} value="Logout" />
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
