@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { MotorcyclesProvider } from "./context";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <MotorcyclesProvider>
-    <App />
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
   </MotorcyclesProvider>,
   document.getElementById("root")
 );

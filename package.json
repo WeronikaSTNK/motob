@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "droptheword": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -15,6 +16,7 @@
     "react-scripts": "3.4.1",
     "react-scroll-button": "^1.1.2",
     "react-scroll-into-view": "^1.8.2",
+    "react-stormpath": "^2.0.1",
     "sass": "^1.26.5"
   },
   "scripts": {
