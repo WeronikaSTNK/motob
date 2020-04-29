@@ -1,61 +1,62 @@
 import React from "react";
-import { AuthContext } from "../App";
+import { MotorcyclesContext } from "../context";
+import { useHistory } from "react-router-dom";
 export const Login = () => {
-
-  const { dispatch } = React.useContext(AuthContext);
+  const { dispatch } = React.useContext(MotorcyclesContext);
+const history = useHistory();
 
   const initialState = {
     email: "",
     password: "",
     isSubmitting: false,
-    errorMessage: null
+    errorMessage: null,
   };
 
   const [data, setData] = React.useState(initialState);
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     setData({
       ...data,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     setData({
       ...data,
       isSubmitting: true,
-      errorMessage: null
+      errorMessage: null,
     });
     //tutaj nie wiem co mam złapać XD nie umiem w resta, dej mnie coś. tu uderzam w api z innego tutoriala
 
     fetch("https://hookedbe.herokuapp.com/api/login", {
       method: "post",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username: data.email,
-        password: data.password
-      })
+        password: data.password,
+      }),
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
           return res.json();
         }
         throw res;
       })
-      .then(resJson => {
+      .then((resJson) => {
         dispatch({
           type: "LOGIN",
-          payload: resJson
+          payload: resJson,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         setData({
           ...data,
           isSubmitting: false,
-          errorMessage: error.message || error.statusText
+          errorMessage: error.message || error.statusText,
         });
       });
   };

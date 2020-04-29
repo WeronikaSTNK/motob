@@ -1,43 +1,47 @@
-import React, { Component } from "react";
+import React, { createContext, useState, useEffect, useCallback } from "react";
 import items from "./data";
-const MotorcyclesContext = React.createContext();
+import PropTypes from 'prop-types';
 
-class MotorcyclesProvider extends Component {
-  state = {
-    motorcycles: [],
-    featuredMotorcycles: [],
-    loading: true,
-    sortedMotors: [],
-    accessorizes: [],
-    data: [],
-    employees: [],
-  };
+const MotorcyclesContext = createContext({
+  motorcycles: [],
+  featuredMotorcycles: [],
+  loading: true,
+  accessorizes: [],
+  data: [],
+  employees: [],
 
-  //getData about motorcycles
-  async componentDidMount() {
-    let motorcycles = this.formatData(items);
-    let accessorizes = this.accData(items);
+});
+const initialStateAuth = {
+  isAuthenticated: false,
+  user: null,
+  token: null,
+};
+const MotorcyclesProvider = ({ children }) => {
+  const [motorcycle, setMotorcycles] = useState([]);
+  const [accessorizes, setAccessorizes] = useState([]);
+  const [featuredMotorcycles, setFeaturedMotorcycles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let motorcycles = formatData(items);
+    let accessorizes = accData(items);
     let featuredMotorcycles = motorcycles.filter(
       (motorcycle) => motorcycle.featured === true
     );
-    this.setState({
-      motorcycles,
-      featuredMotorcycles,
-      loading: false,
-      accessorizes,
-    });
+    setMotorcycles(motorcycles);
+    setAccessorizes(accessorizes);
+    setFeaturedMotorcycles(featuredMotorcycles);
+    setLoading(false);
+  }, []);
 
-    // fetch data from api - random user - just example
-    const url = "https://api.randomuser.me/";
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    this.setState({
-      data,
-    });
-  }
 
-  formatData(items) {
+  const accData = useCallback((items) => {
+    let motorcycles = formatData(items);
+    let accessorizes = motorcycles.filter((moto) => moto.accessorize === true);
+    return accessorizes;
+  }, []);
+
+  const formatData = (items) => {
     let tempItems = items.map((item) => {
       let id = item.sys.id;
       let images = item.fields.images.map((image) => image.fields.file.url);
@@ -45,23 +49,38 @@ class MotorcyclesProvider extends Component {
       return motorcycle;
     });
     return tempItems;
-  }
 
-  accData(items) {
-    let motorcycles = this.formatData(items);
-    let accessorizes = motorcycles.filter((moto) => moto.accessorize === true);
-    // console.log(accessorizes);
-    return accessorizes;
-  }
+  };
 
-  render() {
-    return (
-      <MotorcyclesContext.Provider value={{ ...this.state }}>
-        {this.props.children}
-      </MotorcyclesContext.Provider>
-    );
+ const reducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      localStorage.setItem("user", JSON.stringify(action.payload.user));
+      localStorage.setItem("token", JSON.stringify(action.payload.token));
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload.user,
+        token: action.payload.token,
+      };
+    case "LOGOUT":
+      localStorage.clear();
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+      };
+    default:
+      return state;
   }
-}
+};
+
+  return (
+    <MotorcyclesContext.Provider value={{initialStateAuth,  motorcycle, accessorizes, featuredMotorcycles, reducer }}>
+      {children}
+    </MotorcyclesContext.Provider>
+  );
+};
 
 const MotorcyclesConsumer = MotorcyclesContext.Consumer;
 export { MotorcyclesProvider, MotorcyclesConsumer, MotorcyclesContext };
@@ -75,3 +94,6 @@ export function withMotorcycleConsumer(Component) {
     );
   };
 }
+MotorcyclesProvider.propTypes = {
+  children: PropTypes.any.isRequired,
+};
