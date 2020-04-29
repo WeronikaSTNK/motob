@@ -53,7 +53,8 @@
 .titleSection,
 #aboutSection,
 #contactSection,
-#offersSection {
+#offersSection,
+#dashboard {
   min-height: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -78,6 +79,11 @@
 .centerText {
   text-align: center;
   letter-spacing: 1px;
+}
+.card {
+  width: 25vw;
+  height: auto;
+
 }
 #scrollDownButton a {
   padding-top: 60px;

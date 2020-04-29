@@ -62,9 +62,9 @@ const history = useHistory();
   };
 
   return (
-    <div className="login-container">
+    <div className="iconsContainer">
       <div className="card">
-        <div className="container">
+        <div className="iconsContainer">
           <form onSubmit={handleFormSubmit}>
             <h1>Login</h1>
             <label htmlFor="email">
@@ -90,7 +90,7 @@ const history = useHistory();
             {data.errorMessage && (
               <span className="form-error">{data.errorMessage}</span>
             )}
-            <button disabled={data.isSubmitting}>
+            <button className="moreInfoBtn" disabled={data.isSubmitting}>
               {data.isSubmitting ? "Loading..." : "Login"}
             </button>
           </form>

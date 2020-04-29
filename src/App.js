@@ -1,4 +1,4 @@
-import React, { useContext, lazy, Suspense } from "react";
+import React, { useContext } from "react";
 import Header from "./layout/Header";
 import About from "./components/About";
 import Login from "./layout/Login";
