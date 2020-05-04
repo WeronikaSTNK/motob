@@ -9,19 +9,19 @@ export const Nav = ({ logo }) => {
   return (
     <nav className="navigation">
       <div className="iconsWrapper">
+        <a href="#top">
         <img src={logo} alt="logo" />
+        </a>
         <div className="iconsWrapper">
           <FaMobileAlt
             className="headerIcons"
             size="1.5em"
           />
           <a href="tel: +485173787705" className="headerIcons">
-            517 378 705{" "}
+            517 378 705
           </a>
-
         </div>
       </div>
-
       <ul className={navOpen ? "active" : ""}>
         <figure
           className="image-logo"
@@ -62,7 +62,7 @@ export const Nav = ({ logo }) => {
             setNavOpen(!navOpen);
           }}
         >
-          <ScrollIntoView selector="#rentalInfo">
+          <ScrollIntoView selector="#motorcycles">
             <button className="naviListButton">Oferta</button>
           </ScrollIntoView>
         </li>

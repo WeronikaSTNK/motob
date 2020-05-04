@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
-#header {
-  padding: 10px;
-  background-color: var(--main-dark-color);
-}
+// #header {
+//   padding: 10px;
+//   background-color: var(--main-dark-color);
+// }
 
 #contactSection p {
   text-align: center;
@@ -31,8 +31,7 @@
   img {
     width: 27vw;
     height: auto;
-      animation: pop-up 3s forwards;
-
+    animation: pop-up 3s forwards;
   }
 }
 
@@ -83,7 +82,6 @@
 .card {
   width: 25vw;
   height: auto;
-
 }
 #scrollDownButton a {
   padding-top: 60px;
@@ -222,24 +220,23 @@ a {
 #motorcycles,
 #accessorizes {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .imgContainer {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   margin: 2em 0;
 }
 .imgContainer img {
   height: auto;
-  width: 30vw;
+  width: 40vw;
   display: block;
   transition: var(--mainTransition);
-  margin-top: 4em;
+  margin: 2em;
 }
 .priceTop {
   position: absolute;
@@ -269,7 +266,6 @@ a {
 }
 .descWrapper {
   font-size: 0.8em;
-  // text-align: justify;
   height: auto;
 }
 ul {
@@ -279,24 +275,12 @@ ul {
   letter-spacing: 0.1em;
 }
 li {
-  font-weight: 600;
   padding: 1px;
 }
 b {
   font-weight: 100;
 }
 
-// #accessorizes .descriptionMoto {
-//   line-height: 1.7em;
-//   letter-spacing: 0.1em;
-// }
-
-#rentalInfo {
-  li {
-    font-weight: 500;
-    padding: 0;
-  }
-}
 @keyframes pop-up {
   0% {
     transform: scale(0) translateY(-10px);
@@ -352,11 +336,11 @@ b {
     width: 50vw;
     height: auto;
   }
-  #motorcycles,
-  #accessorizes {
-    display: flex;
-    flex-direction: column;
-  }
+  // #motorcycles,
+  // #accessorizes {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
   .motorcyclesName {
     font-size: 1.5em;
   }

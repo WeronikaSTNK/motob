@@ -185,7 +185,7 @@ export default [
 
   {
     sys: {
-      id: "6",
+      id: "7",
     },
     fields: {
       accessorize: true,
@@ -208,7 +208,7 @@ export default [
 
   {
     sys: {
-      id: "7",
+      id: "6",
     },
     fields: {
       accessorize: true,

@@ -15,6 +15,7 @@ export const Homepage = () => {
       <div className="right">
         <div className="titleWrapper">
 <img src={motob} alt='motob-logo' />
+
           <div className="details"> {myNewString} </div>
           <div>
             <div id="scrollDownButton">

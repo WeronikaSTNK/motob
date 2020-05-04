@@ -14,7 +14,7 @@ export default class AllItems extends Component {
       accessorizes,
     } = this.context;
     motorcycle = motorcycle.map((item) => {
-      return <SingleMotorcycle key={item.id} motorcycle={item} />;
+      return <SingleMotorcycle key={item.id} motorcycle={item} accessorizes={accessorizes} />;
     });
     accessorizes = accessorizes.map((item) => {
       return <SingleAccessorize key={item.id} accessorizes={item} />;
