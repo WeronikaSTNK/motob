@@ -3,7 +3,6 @@ import { MotorcyclesContext } from "../context";
 import { useHistory } from "react-router-dom";
 export const Login = () => {
   const { dispatch } = React.useContext(MotorcyclesContext);
-const history = useHistory();
 
   const initialState = {
     email: "",

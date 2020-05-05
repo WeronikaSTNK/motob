@@ -21,12 +21,15 @@ export const App = () => {
   return (
     <>
       <Header logo={logo} />
+
       <MotorcyclesContext.Provider value={{ state, dispatch }}>
+
         {!state.isAuthenticated ? (
           <PrivateRoute path="/login" component={Login} />
         ) : (
           <Dashboard />
         )}
+
       </MotorcyclesContext.Provider>
       <Route exact path="/">
         <Nav logo={logo} />

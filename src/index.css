@@ -1,8 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Montserrat&display=swap&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@400;500&display=swap");
 *,
 *:root {
   margin: 0;
@@ -29,7 +26,7 @@ main {
   position: relative;
   display: inline-block;
   background-image: url("./images/back2.jpg");
-    background-position: center;
+  background-position: center;
 }
 h1 {
   font-family: "Lato", sans-serif;
@@ -44,7 +41,6 @@ h2 {
   font-family: "Lato", sans-serif;
   font-size: 2em;
 }
-
 
 h3 {
   position: relative;
@@ -82,10 +78,10 @@ p, span {
   font-size: 1.1em;
 }
 
-
 input{
   margin: 1em;
 }
+
 @media only screen and (max-width: 800px) {
   h1 {
     font-size: 1.1em;
